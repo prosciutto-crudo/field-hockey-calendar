@@ -14,10 +14,11 @@ the group, filter for our team, and parse each page.
 """
 
 import math
+import os
 import re
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date as date_type
 from icalendar import Calendar, Event
 from urllib.parse import quote
 
@@ -30,6 +31,7 @@ SCAN_BUFFER         = 10      # Extra IDs to scan beyond the last expected match
 # ── Team / calendar config ────────────────────────────────────────────────────
 TEAM_NAME        = "JUNIOR FC NEGRE"
 OUTPUT_FILE      = "hockey_calendar.ics"
+CHANGES_FILE     = "changes.txt"
 CALENDAR_NAME    = "🏑 Junior FC – Alevines Negre"
 GAME_DURATION    = 90   # minutes
 WARMUP_BEFORE    = 45   # minutes before kickoff
@@ -126,24 +128,19 @@ def fetch_match(match_id):
         return None
 
     # ── Parse address → Google Maps URL ──────────────────────────────────────
-    # Format is like: "PASSATGE SANT MAMET, 3-5 08195 BARCELONA (SANT CUGAT DEL VALLÉS)"
-    # or:             "Carrer Antic Camí Ral de València, 4 08860 BARCELONA (CASTELLDEFELS)"
-    # We want to map-search on the street + postal + city, not the region in parens.
-    addr_clean = re.sub(r'\s*\([^)]+\)\s*$', '', addr_raw).strip()  # remove trailing (CITY)
+    addr_clean = re.sub(r'\s*\([^)]+\)\s*$', '', addr_raw).strip()
     city_match = re.search(r'\(([^)]+)\)\s*$', addr_raw)
     city_name  = city_match.group(1).strip() if city_match else ""
     address_for_maps = f"{addr_clean}, {city_name}".strip(", ") if city_name else addr_clean
 
     maps_url = f"https://www.google.com/maps/search/?api=1&query={quote(address_for_maps)}"
 
-    # Display address: title-case the street, keep city
-    # Split: "PASSATGE SANT MAMET, 3-5 08195" (street+postal) + city from parens
     street_postal = smart_title(addr_clean)
     city_display  = smart_title(city_name)
     address_display = f"{street_postal}, {city_display}".strip(", ") if city_display else street_postal
 
     # ── Jornada number (derived from match ID) ────────────────────────────────
-    offset  = match_id - FIRST_MATCH_ID   # 0-based offset within the group
+    offset  = match_id - FIRST_MATCH_ID
     jornada = math.ceil((offset + 1) / MATCHES_PER_JORNADA)
 
     return {
@@ -207,7 +204,6 @@ def build_calendar(matches):
 
         if m["datetime"]:
             kick = m["datetime"]
-            # Game
             cal.add_component(make_event(
                 uid=f"{uid_base}-game",
                 summary=summary_game,
@@ -216,7 +212,6 @@ def build_calendar(matches):
                 start=kick,
                 end=kick + timedelta(minutes=GAME_DURATION),
             ))
-            # Warm-up — lean description, just the essentials
             warmup_desc = f"Saque: {kick.strftime('%H:%M')}"
             if addr:
                 warmup_desc += f"\n📍 {addr}"
@@ -243,6 +238,82 @@ def build_calendar(matches):
     return cal
 
 
+# ── Change detection ──────────────────────────────────────────────────────────
+
+def parse_existing_ics(filepath):
+    """Read existing ICS and return {uid: {summary, dtstart, is_allday}} for game events."""
+    if not os.path.exists(filepath):
+        return {}
+    events = {}
+    try:
+        with open(filepath, "rb") as f:
+            cal = Calendar.from_ical(f.read())
+        for component in cal.walk():
+            if component.name != "VEVENT":
+                continue
+            uid = str(component.get("uid", ""))
+            if not uid.endswith("-game"):
+                continue
+            dtstart = component.get("dtstart")
+            dt = dtstart.dt if dtstart else None
+            # datetime is a subclass of date, so check exact type
+            is_allday = (type(dt) is date_type)
+            events[uid] = {
+                "uid":      uid,
+                "summary":  str(component.get("summary", "")),
+                "dtstart":  dt,
+                "is_allday": is_allday,
+            }
+    except Exception:
+        pass
+    return events
+
+
+def diff_calendars(old_events, new_cal):
+    """Compare old events dict vs new Calendar, return list of human-readable change strings."""
+    new_events = {}
+    for component in new_cal.walk():
+        if component.name != "VEVENT":
+            continue
+        uid = str(component.get("uid", ""))
+        if not uid.endswith("-game"):
+            continue
+        dtstart = component.get("dtstart")
+        dt = dtstart.dt if dtstart else None
+        is_allday = (type(dt) is date_type)
+        new_events[uid] = {
+            "uid":      uid,
+            "summary":  str(component.get("summary", "")),
+            "dtstart":  dt,
+            "is_allday": is_allday,
+        }
+
+    changes = []
+
+    for uid, ev in new_events.items():
+        if uid not in old_events:
+            changes.append(f"➕ Nuevo partido añadido: {ev['summary']}")
+
+    for uid, ev in old_events.items():
+        if uid not in new_events:
+            changes.append(f"➖ Partido eliminado: {ev['summary']}")
+
+    for uid, new_ev in new_events.items():
+        if uid not in old_events:
+            continue
+        old_ev = old_events[uid]
+        if old_ev["is_allday"] and not new_ev["is_allday"]:
+            dt_str = new_ev["dtstart"].strftime("%d %b a las %H:%M")
+            changes.append(f"⏰ Hora confirmada: {new_ev['summary']} → {dt_str}")
+        elif not old_ev["is_allday"] and not new_ev["is_allday"]:
+            if old_ev["dtstart"] != new_ev["dtstart"]:
+                old_str = old_ev["dtstart"].strftime("%d %b %H:%M")
+                new_str = new_ev["dtstart"].strftime("%d %b %H:%M")
+                changes.append(f"🕐 Hora modificada: {new_ev['summary']}  {old_str} → {new_str}")
+
+    return changes
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -251,6 +322,9 @@ if __name__ == "__main__":
 
     print(f"🔍 Scanning {len(scan_range)} match pages for '{TEAM_NAME}'…")
     print(f"   IDs: {scan_range.start} – {scan_range.stop - 1}\n")
+
+    # Load existing calendar before regenerating (for change detection)
+    old_events = parse_existing_ics(OUTPUT_FILE)
 
     matches = []
     for match_id in scan_range:
@@ -272,7 +346,47 @@ if __name__ == "__main__":
     print(f"   {allday} all-day (→ {allday} events, time TBC)")
     print(f"   {timed * 2 + allday} total events\n")
 
+    # Build new calendar
     cal = build_calendar(matches)
+
+    # Detect changes
+    changes = diff_calendars(old_events, cal)
+
+    # Write ICS
     with open(OUTPUT_FILE, "wb") as f:
         f.write(cal.to_ical())
     print(f"📅 Written: {OUTPUT_FILE}")
+
+    # Write changes summary (read by GitHub Actions for email)
+    run_time = datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC")
+    lines = [
+        f"🏑 Junior FC Negre – Actualización del calendario",
+        f"📆 {run_time}",
+        "─" * 48,
+        "",
+        f"📊 Resumen: {len(matches)} partidos encontrados",
+        f"   • {timed} con hora confirmada → {timed * 2} eventos (partido + calentamiento)",
+        f"   • {allday} pendientes de hora → {allday} eventos de día completo",
+        f"   • {timed * 2 + allday} eventos totales en el calendario",
+        "",
+    ]
+
+    if changes:
+        lines.append(f"🔄 Cambios detectados ({len(changes)}):")
+        for c in changes:
+            lines.append(f"   {c}")
+    else:
+        lines.append("✅ Sin cambios — el calendario ya estaba actualizado.")
+
+    lines += [
+        "",
+        "─" * 48,
+        "📎 Suscripción al calendario:",
+        "   https://prosciutto-crudo.github.io/field-hockey-calendar/hockey_calendar.ics",
+    ]
+
+    summary = "\n".join(lines)
+    with open(CHANGES_FILE, "w") as f:
+        f.write(summary)
+
+    print("\n" + summary)

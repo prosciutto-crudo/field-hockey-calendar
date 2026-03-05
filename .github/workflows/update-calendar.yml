@@ -34,3 +34,20 @@ jobs:
           git add hockey_calendar.ics
           git diff --cached --quiet || git commit -m "Update calendar $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%d/%m/%Y')" >> $GITHUB_OUTPUT
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.GMAIL_USER }}
+          password: ${{ secrets.GMAIL_PASSWORD }}
+          subject: "🏑 Hockey Calendar – ${{ steps.date.outputs.date }}"
+          to: ${{ secrets.GMAIL_USER }}
+          from: Hockey Calendar <${{ secrets.GMAIL_USER }}>
+          body: file://changes.txt
