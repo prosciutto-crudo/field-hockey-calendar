@@ -1,0 +1,219 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//JFC Negre Hockey Scraper//EN
+X-WR-CALNAME:🏑 Junior FC – Alevines Negre
+X-PUBLISHED-TTL:PT12H
+X-WR-TIMEZONE:Europe/Madrid
+BEGIN:VEVENT
+SUMMARY:✈️ JFC Negre vs Club Egara C (J1)
+DTSTART:20260110T133000
+DTEND:20260110T150000
+UID:jfcnegre-62766-fchockey-game
+DESCRIPTION:Jornada 1\nClub Egara C vs Junior FC Negre\n📍 Carrer Jacint
+  Badiella\, 5 08225 Barcelona\, Terrassa\n🗺️ Cómo llegar: https://ww
+ w.google.com/maps/search/?api=1&query=CARRER%20JACINT%20BADIELLA%2C%205%20
+ 08225%20BARCELONA%2C%20TERRASSA
+LOCATION:Carrer Jacint Badiella\, 5 08225 Barcelona\, Terrassa
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260110T124500
+DTEND:20260110T133000
+UID:jfcnegre-62766-fchockey-warmup
+DESCRIPTION:Saque: 13:30\n📍 Carrer Jacint Badiella\, 5 08225 Barcelona\
+ , Terrassa
+LOCATION:Carrer Jacint Badiella\, 5 08225 Barcelona\, Terrassa
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏠 JFC Negre vs CHC (J2)
+DTSTART:20260117T090000
+DTEND:20260117T103000
+UID:jfcnegre-62768-fchockey-game
+DESCRIPTION:Jornada 2\nJunior FC Negre vs CHC\n📍 Passatge Sant Mamet\, 
+ 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ Cómo llegar: https:
+ //www.google.com/maps/search/?api=1&query=PASSATGE%20SANT%20MAMET%2C%203-5
+ %2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260117T081500
+DTEND:20260117T090000
+UID:jfcnegre-62768-fchockey-warmup
+DESCRIPTION:Saque: 09:00\n📍 Passatge Sant Mamet\, 3-5 08195 Barcelona\,
+  Sant Cugat del Vallés
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:✈️ JFC Negre vs ATHC Groc (J3)
+DTSTART:20260124T111500
+DTEND:20260124T124500
+UID:jfcnegre-62771-fchockey-game
+DESCRIPTION:Jornada 3\nATHC Groc vs Junior FC Negre\n📍 Carretrra de Cas
+ tellar\, 628 08227 Barcelona\, Terrassa\n🗺️ Cómo llegar: https://www
+ .google.com/maps/search/?api=1&query=CARRETRRA%20DE%20CASTELLAR%2C%20628%2
+ 008227%20BARCELONA%2C%20TERRASSA
+LOCATION:Carretrra de Castellar\, 628 08227 Barcelona\, Terrassa
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260124T103000
+DTEND:20260124T111500
+UID:jfcnegre-62771-fchockey-warmup
+DESCRIPTION:Saque: 11:15\n📍 Carretrra de Castellar\, 628 08227 Barcelon
+ a\, Terrassa
+LOCATION:Carretrra de Castellar\, 628 08227 Barcelona\, Terrassa
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏑 JFC Negre vs Castelldefels HC Negre (J5) – hora por confirm
+ ar
+DTSTART;VALUE=DATE:20260214
+DTEND;VALUE=DATE:20260215
+UID:jfcnegre-62777-fchockey-game
+DESCRIPTION:Jornada 5\nJunior FC Negre vs Castelldefels HC Negre\n📍 Pas
+ satge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ C
+ ómo llegar: https://www.google.com/maps/search/?api=1&query=PASSATGE%20SA
+ NT%20MAMET%2C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%
+ 89S\n\n⏰ Hora de inicio pendiente de confirmación.
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:✈️ JFC Negre vs Diagonal Azul (J6)
+DTSTART:20260221T110000
+DTEND:20260221T123000
+UID:jfcnegre-62780-fchockey-game
+DESCRIPTION:Jornada 6\nDiagonal Azul vs Junior FC Negre\n📍 Avda. Dr. Ma
+ rañon\, 19-31 08028 Barcelona\, Barcelona\n🗺️ Cómo llegar: https://
+ www.google.com/maps/search/?api=1&query=AVDA.%20DR.%20MARA%C3%91ON%2C%2019
+ -31%2008028%20BARCELONA%2C%20BARCELONA
+LOCATION:Avda. Dr. Marañon\, 19-31 08028 Barcelona\, Barcelona
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260221T101500
+DTEND:20260221T110000
+UID:jfcnegre-62780-fchockey-warmup
+DESCRIPTION:Saque: 11:00\n📍 Avda. Dr. Marañon\, 19-31 08028 Barcelona\
+ , Barcelona
+LOCATION:Avda. Dr. Marañon\, 19-31 08028 Barcelona\, Barcelona
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏠 JFC Negre vs ATHC Negre (J7)
+DTSTART:20260228T090000
+DTEND:20260228T103000
+UID:jfcnegre-62784-fchockey-game
+DESCRIPTION:Jornada 7\nJunior FC Negre vs ATHC Negre\n📍 Passatge Sant M
+ amet\, 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ Cómo llegar:
+  https://www.google.com/maps/search/?api=1&query=PASSATGE%20SANT%20MAMET%2
+ C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260228T081500
+DTEND:20260228T090000
+UID:jfcnegre-62784-fchockey-warmup
+DESCRIPTION:Saque: 09:00\n📍 Passatge Sant Mamet\, 3-5 08195 Barcelona\,
+  Sant Cugat del Vallés
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏠 JFC Negre vs Club Egara C (J8)
+DTSTART:20260307T103000
+DTEND:20260307T120000
+UID:jfcnegre-62787-fchockey-game
+DESCRIPTION:Jornada 8\nJunior FC Negre vs Club Egara C\n📍 Passatge Sant
+  Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ Cómo llega
+ r: https://www.google.com/maps/search/?api=1&query=PASSATGE%20SANT%20MAMET
+ %2C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260307T094500
+DTEND:20260307T103000
+UID:jfcnegre-62787-fchockey-warmup
+DESCRIPTION:Saque: 10:30\n📍 Passatge Sant Mamet\, 3-5 08195 Barcelona\,
+  Sant Cugat del Vallés
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:✈️ JFC Negre vs CHC (J9)
+DTSTART:20260314T093000
+DTEND:20260314T110000
+UID:jfcnegre-62789-fchockey-game
+DESCRIPTION:Jornada 9\nCHC vs Junior FC Negre\n📍 Passeig Olímpic\, 4-6
+  08038 Barcelona\, Barcelona\n🗺️ Cómo llegar: https://www.google.com
+ /maps/search/?api=1&query=PASSEIG%20OL%C3%8DMPIC%2C%204-6%2008038%20BARCEL
+ ONA%2C%20BARCELONA
+LOCATION:Passeig Olímpic\, 4-6 08038 Barcelona\, Barcelona
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260314T084500
+DTEND:20260314T093000
+UID:jfcnegre-62789-fchockey-warmup
+DESCRIPTION:Saque: 09:30\n📍 Passeig Olímpic\, 4-6 08038 Barcelona\, Ba
+ rcelona
+LOCATION:Passeig Olímpic\, 4-6 08038 Barcelona\, Barcelona
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏑 JFC Negre vs ATHC Groc (J10) – hora por confirmar
+DTSTART;VALUE=DATE:20260321
+DTEND;VALUE=DATE:20260322
+UID:jfcnegre-62792-fchockey-game
+DESCRIPTION:Jornada 10\nJunior FC Negre vs ATHC Groc\n📍 Passatge Sant M
+ amet\, 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ Cómo llegar:
+  https://www.google.com/maps/search/?api=1&query=PASSATGE%20SANT%20MAMET%2
+ C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S\n\n⏰ H
+ ora de inicio pendiente de confirmación.
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏑 JFC Negre vs Castelldefels HC Negre (J12) – hora por confir
+ mar
+DTSTART;VALUE=DATE:20260418
+DTEND;VALUE=DATE:20260419
+UID:jfcnegre-62798-fchockey-game
+DESCRIPTION:Jornada 12\nCastelldefels HC Negre vs Junior FC Negre\n📍 Ca
+ rrer Antic Camí Ral de València\, 4 08860 Barcelona\, Castelldefels\n
+ 🗺️ Cómo llegar: https://www.google.com/maps/search/?api=1&query=Carr
+ er%20Antic%20Cam%C3%AD%20Ral%20de%20Val%C3%A8ncia%2C%204%2008860%20BARCELO
+ NA%2C%20CASTELLDEFELS\n\n⏰ Hora de inicio pendiente de confirmación.
+LOCATION:Carrer Antic Camí Ral de València\, 4 08860 Barcelona\, Castell
+ defels
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏑 JFC Negre vs Diagonal Azul (J13) – hora por confirmar
+DTSTART;VALUE=DATE:20260509
+DTEND;VALUE=DATE:20260510
+UID:jfcnegre-62801-fchockey-game
+DESCRIPTION:Jornada 13\nJunior FC Negre vs Diagonal Azul\n📍 Passatge Sa
+ nt Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ Cómo lle
+ gar: https://www.google.com/maps/search/?api=1&query=PASSATGE%20SANT%20MAM
+ ET%2C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S\n\n
+ ⏰ Hora de inicio pendiente de confirmación.
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🏑 JFC Negre vs ATHC Negre (J14) – hora por confirmar
+DTSTART;VALUE=DATE:20260516
+DTEND;VALUE=DATE:20260517
+UID:jfcnegre-62805-fchockey-game
+DESCRIPTION:Jornada 14\nATHC Negre vs Junior FC Negre\n📍 Carretera de C
+ astellar\, 628 08227 Barcelona\, Terrassa\n🗺️ Cómo llegar: https://w
+ ww.google.com/maps/search/?api=1&query=CARRETERA%20DE%20CASTELLAR%2C%20628
+ %2008227%20BARCELONA%2C%20TERRASSA\n\n⏰ Hora de inicio pendiente de conf
+ irmación.
+LOCATION:Carretera de Castellar\, 628 08227 Barcelona\, Terrassa
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,11 @@
+# Ignore everything except the hockey calendar files
+*
+
+# But keep these files
+!.gitignore
+!scraper.py
+!requirements.txt
+!hockey_calendar.ics
+!.github/
+!.github/workflows/
+!.github/workflows/update-calendar.yml
