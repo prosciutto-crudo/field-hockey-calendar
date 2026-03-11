@@ -165,15 +165,24 @@ DESCRIPTION:Saque: 09:30\n📍 Passeig Olímpic\, 4-6 08038 Barcelona\, Ba
 LOCATION:Passeig Olímpic\, 4-6 08038 Barcelona\, Barcelona
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:🏑 JFC Negre vs ATHC Groc (J10) – hora por confirmar
-DTSTART;VALUE=DATE:20260321
-DTEND;VALUE=DATE:20260322
+SUMMARY:🏠 JFC Negre vs ATHC Groc (J10)
+DTSTART:20260321T103000
+DTEND:20260321T120000
 UID:jfcnegre-62792-fchockey-game
 DESCRIPTION:Jornada 10\nJunior FC Negre vs ATHC Groc\n📍 Passatge Sant M
  amet\, 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ Cómo llegar:
   https://www.google.com/maps/search/?api=1&query=PASSATGE%20SANT%20MAMET%2
- C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S\n\n⏰ H
- ora de inicio pendiente de confirmación.
+ C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260321T094500
+DTEND:20260321T103000
+UID:jfcnegre-62792-fchockey-warmup
+DESCRIPTION:Saque: 10:30\n📍 Passatge Sant Mamet\, 3-5 08195 Barcelona\,
+  Sant Cugat del Vallés
 LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
  s
 END:VEVENT
