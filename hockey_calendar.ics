@@ -187,16 +187,25 @@ LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
  s
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:🏑 JFC Negre vs Castelldefels HC Negre (J12) – hora por confir
- mar
-DTSTART;VALUE=DATE:20260418
-DTEND;VALUE=DATE:20260419
+SUMMARY:✈️ JFC Negre vs Castelldefels HC Negre (J12)
+DTSTART:20260418T110000
+DTEND:20260418T123000
 UID:jfcnegre-62798-fchockey-game
 DESCRIPTION:Jornada 12\nCastelldefels HC Negre vs Junior FC Negre\n📍 Ca
  rrer Antic Camí Ral de València\, 4 08860 Barcelona\, Castelldefels\n
  🗺️ Cómo llegar: https://www.google.com/maps/search/?api=1&query=Carr
  er%20Antic%20Cam%C3%AD%20Ral%20de%20Val%C3%A8ncia%2C%204%2008860%20BARCELO
- NA%2C%20CASTELLDEFELS\n\n⏰ Hora de inicio pendiente de confirmación.
+ NA%2C%20CASTELLDEFELS
+LOCATION:Carrer Antic Camí Ral de València\, 4 08860 Barcelona\, Castell
+ defels
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260418T101500
+DTEND:20260418T110000
+UID:jfcnegre-62798-fchockey-warmup
+DESCRIPTION:Saque: 11:00\n📍 Carrer Antic Camí Ral de València\, 4 088
+ 60 Barcelona\, Castelldefels
 LOCATION:Carrer Antic Camí Ral de València\, 4 08860 Barcelona\, Castell
  defels
 END:VEVENT
