@@ -210,15 +210,24 @@ LOCATION:Carrer Antic Camí Ral de València\, 4 08860 Barcelona\, Castell
  defels
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:🏑 JFC Negre vs Diagonal Azul (J13) – hora por confirmar
-DTSTART;VALUE=DATE:20260509
-DTEND;VALUE=DATE:20260510
+SUMMARY:🏠 JFC Negre vs Diagonal Azul (J13)
+DTSTART:20260509T100000
+DTEND:20260509T113000
 UID:jfcnegre-62801-fchockey-game
 DESCRIPTION:Jornada 13\nJunior FC Negre vs Diagonal Azul\n📍 Passatge Sa
  nt Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallés\n🗺️ Cómo lle
  gar: https://www.google.com/maps/search/?api=1&query=PASSATGE%20SANT%20MAM
- ET%2C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S\n\n
- ⏰ Hora de inicio pendiente de confirmación.
+ ET%2C%203-5%2008195%20BARCELONA%2C%20SANT%20CUGAT%20DEL%20VALL%C3%89S
+LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
+ s
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260509T091500
+DTEND:20260509T100000
+UID:jfcnegre-62801-fchockey-warmup
+DESCRIPTION:Saque: 10:00\n📍 Passatge Sant Mamet\, 3-5 08195 Barcelona\,
+  Sant Cugat del Vallés
 LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
  s
 END:VEVENT
