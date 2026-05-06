@@ -232,15 +232,23 @@ LOCATION:Passatge Sant Mamet\, 3-5 08195 Barcelona\, Sant Cugat del Vallé
  s
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:🏑 JFC Negre vs ATHC Negre (J14) – hora por confirmar
-DTSTART;VALUE=DATE:20260516
-DTEND;VALUE=DATE:20260517
+SUMMARY:✈️ JFC Negre vs ATHC Negre (J14)
+DTSTART:20260516T101500
+DTEND:20260516T114500
 UID:jfcnegre-62805-fchockey-game
 DESCRIPTION:Jornada 14\nATHC Negre vs Junior FC Negre\n📍 Carretera de C
  astellar\, 628 08227 Barcelona\, Terrassa\n🗺️ Cómo llegar: https://w
  ww.google.com/maps/search/?api=1&query=CARRETERA%20DE%20CASTELLAR%2C%20628
- %2008227%20BARCELONA%2C%20TERRASSA\n\n⏰ Hora de inicio pendiente de conf
- irmación.
+ %2008227%20BARCELONA%2C%20TERRASSA
+LOCATION:Carretera de Castellar\, 628 08227 Barcelona\, Terrassa
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:🔥 Calentamiento
+DTSTART:20260516T093000
+DTEND:20260516T101500
+UID:jfcnegre-62805-fchockey-warmup
+DESCRIPTION:Saque: 10:15\n📍 Carretera de Castellar\, 628 08227 Barcelon
+ a\, Terrassa
 LOCATION:Carretera de Castellar\, 628 08227 Barcelona\, Terrassa
 END:VEVENT
 END:VCALENDAR
